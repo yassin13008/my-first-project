@@ -10,5 +10,33 @@
 <p *ngSwitchCase="true" style="color: green;"> Succes</p>
 <p *ngSwitchCase="false" style="color: red;"> Failure</p>
 </div>
+<!-- [ngClass]="{Nom de class 1 : On met la condit°, nom de cls : condi 2" -->
 
 <p [ngClass]="{success : resultat == true, error : resultat == false}">{{ resultat ? 'reussite' : 'echec' }}</p>
+
+<p [ngStyle]="{color : resultat == true ? 'green' : 'red'}">
+    {{ resultat == true ? 'reussite' : 'echec'}}
+</p>
+
+<!--  transformation de donnée / pipes-->
+
+<p> {{ today | date }}</p> 
+<!-- premiere pipe te donne juste la date  -->
+<p> {{ today | date:'shortTime' }}</p>
+<!--  deuxieme pipe te donne juste l'heure -->
+<p> {{ today | date:'fullDate' }}</p>
+<!--  troisieme pipe te donne le jour le mois le jour en nombre et l'année -->
+
+<p>{{ titreBouton | uppercase}}</p>
+<!-- Ici je transforme le titre en majuscule -->
+<p>{{ titreBouton | lowercase}}</p>
+<!-- Ici je transforme le reste en minuscule -->
+<p>{{ montant | currency}}</p>
+<!-- Ici je transforme le montant en devise monétaire -->
+<p>{{ montant | number : '5.2-4'}}</p>
+<!--  Format particulier = {miniInterdigits (1) {miniFractionDigits} (0) maxFractionDigits (0)} -->
+<!-- MiniInterDigit = c'est le minim de nombre a afficher sur le nombre entier = il a 5 par exemple = il affichera ceci = 00.005
+ -->
+<!-- min et max fraction marche pour les virgules apres le nbre entier -->
+<!-- J'ai mis le nbr pi (à la propriete montant) pour que tu comprends
+ca affichera sur le dom ceci : (00,003).((14)26) -->

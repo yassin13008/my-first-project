@@ -10,14 +10,16 @@ export class FirstCpmComponent implements OnInit {
   title = 'Angular-projet';
 
   @Input()
-  valeur_texte: string = ''
+  valeur_texte: string = '';
 
   @Output()
-  clickEvent: EventEmitter<string> = new EventEmitter<string>()
-
+  clickEvent: EventEmitter<string> = new EventEmitter<string>();
+  
+  montant : number = 3.142568
   titreBouton: string = 'Mon titre'
   listeAlpha: Array<string> = ['a', 'b', 'c', 'd', 'e']
-  resultat: boolean = false;
+  resultat: boolean = true;
+  today : Date = new Date()
 
 
   ngOnInit(): void {
