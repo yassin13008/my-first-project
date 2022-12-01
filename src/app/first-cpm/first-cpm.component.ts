@@ -1,5 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Hero } from 'src/models/hero';
+import { HeroService } from 'src/services/hero.service';
 
 @Component({
   selector: 'app-first-cpm',
@@ -21,10 +23,18 @@ export class FirstCpmComponent implements OnInit {
   resultat: boolean = true;
   today : Date = new Date()
 
+  heroes : Hero[] = []
+  constructor(private heroService: HeroService) {
+    this.heroes = this.heroService.getHeroes();
+    console.log(this.heroes)
+
+  }
 
   ngOnInit(): void {
-    console.log("J'ai commencé oui")
-    console.log(this.valeur_texte)
+
+
+    // console.log("J'ai commencé oui")
+    // console.log(this.valeur_texte)
 
     //  Cela correspont au Ng Class
     switch(this.resultat) {
@@ -39,6 +49,7 @@ export class FirstCpmComponent implements OnInit {
     default :
   }
   
+
 
 }
 
