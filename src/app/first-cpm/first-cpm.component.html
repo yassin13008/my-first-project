@@ -1,0 +1,14 @@
+<p>first-cpm works!</p>
+<button (click)="onButtonClick()">{{ titreBouton }}</button>
+<table>
+<tr *ngFor="let item of listeAlpha">{{ item }}</tr>
+</table>
+
+<p *ngIf="resultat " style="color: green;"> Succes</p>
+
+<div [ngSwitch]="resultat">
+<p *ngSwitchCase="true" style="color: green;"> Succes</p>
+<p *ngSwitchCase="false" style="color: red;"> Failure</p>
+</div>
+
+<p [ngClass]="{success : resultat == true, error : resultat == false}">{{ resultat ? 'reussite' : 'echec' }}</p>

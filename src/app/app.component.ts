@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Angular-projet';
+export class AppComponent implements OnInit{
+  title="my-first-project"
+
+ngOnInit(): void {
+  this.title = 'nouveau title'
+  console.log('Salut ngoninit')
+}
+  onChildMessage(args : string) {
+    console.log(args);
+  }
 }
