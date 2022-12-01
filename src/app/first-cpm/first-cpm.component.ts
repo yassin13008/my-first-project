@@ -25,12 +25,15 @@ export class FirstCpmComponent implements OnInit {
 
   heroes : Hero[] = []
   constructor(private heroService: HeroService) {
-    this.heroes = this.heroService.getHeroes();
+   
     console.log(this.heroes)
 
   }
 
   ngOnInit(): void {
+    this.heroService.getHeroes().subscribe((data)=> {
+      console.log(data)
+    })
 
 
     // console.log("J'ai commencé oui")

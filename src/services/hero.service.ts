@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Hero } from 'src/models/hero';
 
 
@@ -41,9 +43,13 @@ export const HEROES : Hero[] = [
 
 export class HeroService {
 
-  constructor() { }
+  private heroesUrl='api/heroes'
 
-  getHeroes() : Hero[] {
-return HEROES
+  constructor( private http : HttpClient) {
+   
+   }
+
+  getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.heroesUrl);
   }
 }
