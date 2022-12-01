@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Hero } from 'src/models/hero';
 
 
-const Heroes : Hero[] = [
+export const HEROES : Hero[] = [
   { id: 1, name: 'Ugo' },
   { id: 2, name: 'Stéphane' },
   { id: 3, name: 'Hafsa' },
@@ -44,6 +44,6 @@ export class HeroService {
   constructor() { }
 
   getHeroes() : Hero[] {
-return Heroes
+return HEROES
   }
 }
