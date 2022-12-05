@@ -4,10 +4,31 @@
             Hero-detail
         </div>
         <div class="card-body">
-            <form class="row">
+            <form #ngForm="ngForm" class="row g-3 need-validation" (ngSubmit)="onSubmit()" [class.was-validated]="ngForm.submitted">
                 <div class="col-sm-12">
-                    <label>Name</label>
-                    <input [(ngModel)]="hero.name" type="text" name="name" class="form-control" required>
+                    <label for="i_name">Name</label>
+                    <input id="i_name" [(ngModel)]="hero.name" type="text" name="name" class="form-control" required>
+                </div>
+                <div class="col-sm-12">
+                    <label>Date of Birth</label>
+                    <input [(ngModel)]="hero.dob" type="date" name="dob" class="form-control" required>
+                </div>
+                <div class="col-sm-12">
+                    <label for="i_power"> Power</label>
+                        <select id="i_power" class="form-select" name="power" [(ngModel)]="hero.power" required>
+                            <option disabled> Selectionner...</option>
+                            <option value="Smart">Smart</option>
+                            <option value="WeatherChanger">Weather Changer</option>
+                        </select>
+                </div>
+                <div class="col-sm-12">
+                    <div class="from-check">
+                    <input id="i_active" type="checkbox" class="form-check-input" name="isActive" [(ngModel)]="hero.isActive">
+                    <label for="i_active" class="form-check-laber">Active</label>
+                </div>
+                </div>
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>

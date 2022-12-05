@@ -10,5 +10,9 @@ export class HeroDetailComponent {
 
   hero : Hero = new Hero()
 
+  onSubmit() {
+    console.log(this.hero)
+  }
+
 
 }
