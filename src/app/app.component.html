@@ -1,1 +1,9 @@
+<button type="button" (click)="toggle()">Toggle</button>
+<div [@openClose]="isOpen ? 'open' : 'closed'">
+    <p>
+        The box is now {{ isOpen ? 'open' : 'closed'}}
+    </p>
+</div>
+
+
 <app-first-cpm valeur_texte="Bonzoouurr"(clickEvent)="onChildMessage($event)"></app-first-cpm>
