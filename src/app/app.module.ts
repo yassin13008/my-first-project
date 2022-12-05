@@ -15,6 +15,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app.routing-module';
+import { HomeComponent } from './home/home.component';
 
 registerLocaleData(localeFr, 'fr')
 
@@ -26,10 +28,12 @@ function HttpLoaderFactory (http: HttpClient) {
   declarations: [
     AppComponent,
     FirstCpmComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
     InMemoryDataService, { 
