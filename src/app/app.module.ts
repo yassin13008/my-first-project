@@ -13,6 +13,8 @@ import { registerLocaleData } from '@angular/common';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localeFr, 'fr')
 
@@ -23,13 +25,17 @@ function HttpLoaderFactory (http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    FirstCpmComponent
+    FirstCpmComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-    InMemoryDataService, { dataEncapsulation : false }
+    InMemoryDataService, { 
+      dataEncapsulation : false,
+      passThruUnknownUrl: true,
+     }
     ),
     BrowserAnimationsModule,
     TranslateModule.forRoot(
@@ -42,6 +48,7 @@ function HttpLoaderFactory (http: HttpClient) {
         }
       }
     ),
+    FormsModule
   ],
   providers: 
   [
