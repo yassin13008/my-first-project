@@ -17,6 +17,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing-module';
 import { HomeComponent } from './home/home.component';
+import { HeroListComponent } from './hero-list/hero-list.component';
 
 registerLocaleData(localeFr, 'fr')
 
@@ -29,7 +30,8 @@ function HttpLoaderFactory (http: HttpClient) {
     AppComponent,
     FirstCpmComponent,
     HeroDetailComponent,
-    HomeComponent
+    HomeComponent,
+    HeroListComponent
   ],
   imports: [
     BrowserModule,

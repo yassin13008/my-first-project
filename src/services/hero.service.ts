@@ -49,7 +49,20 @@ export class HeroService {
    
    }
 
+  getHeroesMock(): Hero[] {
+    return HEROES
+  }
+
+  getHero(id : number) : Observable<Hero> {
+    return this.http.get<Hero>(`${this.heroesUrl}/${id}`);
+  }
+
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl);
   }
+
+  postHero(model : any) : Observable<Hero[]> {
+    return this.http.post<Hero[]>(this.heroesUrl, model)
+  }
+
 }
