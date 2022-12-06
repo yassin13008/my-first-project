@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="needs-validation" #ngForm="ngForm" [class.was-validated]="ngForm.submitted">
+<div class="container mt-3" style="max-width: 400px ;">
+    <div class="form-floating mg-3">
+<input type="text" class="form-control" id="username" name="username" placeholder="nom@exemple.com" formControlName="username" required>
+<label for="username">Name User</label>
+    </div>
+    <div class="form-floating mg-3">
+        <input type="password" class="form-control" id="password" placeholder="******" formControlName="password" required>
+        <label for="Passeword">Passeword</label>
+    </div>
+    <button type="submit" class="btn btn-secondary w-100">
+        Connect
+    </button>
+</div>
+</form>

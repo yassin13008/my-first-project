@@ -14,10 +14,11 @@ import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing-module';
 import { HomeComponent } from './home/home.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
+import { LoginComponent } from './login/login.component';
 
 registerLocaleData(localeFr, 'fr')
 
@@ -31,7 +32,8 @@ function HttpLoaderFactory (http: HttpClient) {
     FirstCpmComponent,
     HeroDetailComponent,
     HomeComponent,
-    HeroListComponent
+    HeroListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ function HttpLoaderFactory (http: HttpClient) {
         }
       }
     ),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: 
   [
